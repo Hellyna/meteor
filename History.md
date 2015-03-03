@@ -105,6 +105,8 @@
 * Add login hooks on the client: `Accounts.onLogin` and
   `Accounts.onLoginFailure`. #3572
 
+* Avoid unnecessary work while paused in minimongo.
+
 * Upgraded dependencies:
 
   - node: 0.10.36 (from 0.10.33)
