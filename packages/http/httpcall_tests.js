@@ -490,6 +490,13 @@ if (Meteor.isServer) {
   ]);
 }
 
+Meteor.isServer && Tinytest.add("httpcall - npm modules", function (test) {
+  // Make sure the version number looks like a version number. (All published
+  // request version numbers end in ".0".)
+  test.matches(HTTP.NpmModules.request.version, /^2\.(\d+)\.0/);
+  test.equal(typeof(HTTP.NpmModules.request.module), 'function');
+  test.isTrue(HTTP.NpmModules.request.module.get);
+});
 
 // TO TEST/ADD:
 // - https
